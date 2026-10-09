@@ -1,0 +1,58 @@
+/* Set the page font, spacing, and background */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fafafa;
+    color: #333333;
+}
+
+/* Style all paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Style all level two headings */
+h2 {
+    color: #900c3f;
+    font-size: 22px;
+}
+
+/* Add colored borders to tables and cells */
+table, th, td {
+    border: 1px solid #900c3f;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2e6eb;
+}
+
+/* Highlight the third paragraph using its ID */
+p#career-goals {
+    background-color: #f2e6eb;
+    padding: 12px;
+}
+
+/* Apply this class to an HTML element */
+.highlight {
+    font-weight: bold;
+    color: #900c3f;
+}
+
+/* Set dimensions only for images with the logo class */
+img.logo {
+    width: 250px;
+    height: 75px;
+}
