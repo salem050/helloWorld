@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Salem Eshete{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Contact</h1>
+
+{% if submitted %}
+    <div class="alert alert-success">
+        Thank you, {{ first_name }}! Your form has been submitted.
+    </div>
+
+    <h2 class="h4">You entered:</h2>
+    <dl class="row">
+        <dt class="col-sm-3">First Name</dt>
+        <dd class="col-sm-9">{{ first_name }}</dd>
+
+        <dt class="col-sm-3">Last Name</dt>
+        <dd class="col-sm-9">{{ last_name }}</dd>
+
+        <dt class="col-sm-3">Email Address</dt>
+        <dd class="col-sm-9">{{ email }}</dd>
+
+        <dt class="col-sm-3">Message</dt>
+        <dd class="col-sm-9">{{ message }}</dd>
+    </dl>
+
+    <a class="btn btn-primary" href="{{ url_for('contact') }}">
+        Back to Form
+    </a>
+{% else %}
+    <p>Please fill out the form below.</p>
+
+    <form method="post" action="{{ url_for('contact') }}">
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first_name"
+                   name="first_name" autocomplete="given-name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name"
+                   name="last_name" autocomplete="family-name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email"
+                   name="email" autocomplete="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message"
+                      name="message" rows="3" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endif %}
+{% endblock %}

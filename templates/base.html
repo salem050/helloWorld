@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Salem Eshete{% endblock %}</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+<body class="bg-light">
+    <header class="bg-dark text-white py-4">
+        <div class="container">
+            <p class="h3 mb-3">Salem Eshete</p>
+            <nav aria-label="Main navigation">
+                <a class="text-white me-3"
+                   href="{{ url_for('favorite_course', subject='BMGT', course_number='407') }}">
+                    Favorite Course
+                </a>
+                <a class="text-white" href="{{ url_for('contact') }}">
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </main>
+
+    <footer class="container pb-4 text-secondary">
+        <p>Salem Eshete | University of Maryland</p>
+    </footer>
+</body>
+</html>
